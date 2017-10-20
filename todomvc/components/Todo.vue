@@ -3,13 +3,14 @@
         <div>
             <input type="checkbox" />
             <label v-text="todo.text"></label>
-            <button></button>
+            <button>delete</button>
         </div>
         <input
                 :value="todo.text"
                 @keyup.enter = "doneEdit"
                 @keyup.esc="cancelEdit"
-                @blur="doneEdit"/>
+                @blur="doneEdit"
+        v-focus="editing"/>
     </li>
 </template>
 
@@ -40,6 +41,7 @@
             ]),
             doneEdit (e) {
                 const value = e.target.value.trim()
+                console.log("value: " + value)
                 const { todo } = this
                 if (!value){
                     this.deleteTodo({
