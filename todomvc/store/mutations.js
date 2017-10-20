@@ -7,7 +7,7 @@ export const state = {
 export const mutations = {
     addTodo (state,{text}){
         state.todos.push({
-            test,
+            text,
             done:false
         })
     },
