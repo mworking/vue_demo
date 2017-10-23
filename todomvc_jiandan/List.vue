@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <h2 v-text="title"></h2>
-        <input v-model="newItem" v-on:keyup.enter="addNew" placeholder="please input..."/>
+        <input v-model="newItem" v-on:keyup.enter="doneEdit" placeholder="please input..."/>
         <ul>
            <li v-for="item in items" v-bind:class="{finished: item.isFinished}">
                <!--绑定checkbox 自己的checked属性-->
@@ -36,15 +36,21 @@
             toggleFinish: function (item) {
                 item.isFinished = !item.isFinished
             },
-            addNew:function () {
-                this.items.push({
-                    label:this.newItem,
-                    'isFinished': false
-                }),
-                this.newItem = ""
-            },
             deleteItem: function (item) {
                 this.items.splice(this.items.indexOf(item),1)
+            },
+            doneEdit(e){
+                //添加输入框不为空的判断
+                const value = e.target.value.trim()
+                if(value){
+                    this.items.push({
+                        label:this.newItem,
+                        'isFinished': false
+                    }),
+                    this.newItem = ""
+                }else{
+                    alert("empty content")
+                }
             }
         }
     }
