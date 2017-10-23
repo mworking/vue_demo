@@ -1,21 +1,23 @@
 <template>
-    <li>
-        <div>
-            <input type="checkbox" />
-            <label v-text="todo.text" v-bind:class = "{}"></label>
-            <button>delete</button>
+    <li class="todo" :class="{ completed: todo.done, editing: editing }">
+        <div class="view">
+            <input class="toggle" type="checkbox" :checked="todo.done" @change="toggleTodo({ todo: todo })">
+            <!--dblclick html 事件，双击-->
+            <label v-text="todo.text" @dblclick="editing = true"></label>
+            <button class="destroy" @click="deleteTodo({ todo: todo })"></button>
         </div>
-        <input
-                :value="todo.text"
-                @keyup.enter = "doneEdit"
-                @keyup.esc="cancelEdit"
-                @blur="doneEdit"
-        v-focus="editing"/>
+        <input class="edit"
+               v-show="editing"
+               v-focus="editing"
+               :value="todo.text"
+               @keyup.enter="doneEdit"
+               @keyup.esc="cancelEdit"
+               @blur="doneEdit">
     </li>
 </template>
 
 <script>
-    import {mapMutations} from 'vuex'
+    import { mapMutations } from 'vuex'
 
     export default {
         name: 'Todo',
@@ -25,29 +27,29 @@
                 editing: false
             }
         },
-        //(自定义指令) 注册局部指令，组件中接受一个 directives 的选项：
-        directives:{
-            focus (el,{value},{context}){
-                if(value){
-                    context.$nextTick(()=>{
+        directives: {
+            focus (el, { value }, { context }) {
+                if (value) {
+                    context.$nextTick(() => {
                         el.focus()
                     })
                 }
             }
         },
-        methods:{
+        methods: {
             ...mapMutations([
-                 'editTodo', 'toggleTodo', 'deleteTodo'
+                'editTodo',
+                'toggleTodo',
+                'deleteTodo'
             ]),
             doneEdit (e) {
                 const value = e.target.value.trim()
-                console.log("value: " + value)
                 const { todo } = this
-                if (!value){
+                if (!value) {
                     this.deleteTodo({
                         todo
                     })
-                } else if(this.editing){
+                } else if (this.editing) {
                     this.editTodo({
                         todo,
                         value
@@ -61,10 +63,4 @@
             }
         }
     }
-
 </script>
-
-<style>
-
-</style>
-

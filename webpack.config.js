@@ -6,8 +6,8 @@ module.exports = {
         // 如果，这儿不写counter的话， [name].js 最后生成的是 main.js
         // counter: './counter/app.js',
         // counter_hot: './counter-hot/app.js',
-        // todo_mvc: './todomvc/app.js',
-        List:'./todomvc_jiandan/app.js'
+        todo_mvc: './todomvc/app.js'
+        // List:'./todomvc_jiandan/app.js'
     },
 
     output: {
