@@ -3,7 +3,11 @@
         <h2 v-text="title"></h2>
         <input v-model="newItem" v-on:keyup.enter="addNew"/>
         <ul>
-           <li v-for="item in items" v-bind:class="{finished: item.isFinished}">{{item.label}}</li>
+           <li v-for="item in items"
+               v-bind:class="{finished: item.isFinished}"
+               v-on:click="toggleFinish(item)">
+               {{item.label}}
+           </li>
         </ul>
     </div>
 </template>
