@@ -2,7 +2,7 @@
     <li>
         <div>
             <input type="checkbox" />
-            <label v-text="todo.text"></label>
+            <label v-text="todo.text" v-bind:class = "{}"></label>
             <button>delete</button>
         </div>
         <input
@@ -64,4 +64,7 @@
 
 </script>
 
+<style>
+
+</style>
 
