@@ -1,12 +1,13 @@
 <template>
     <div id="app">
         <h2 v-text="title"></h2>
-        <input v-model="newItem" v-on:keyup.enter="addNew"/>
+        <input v-model="newItem" v-on:keyup.enter="addNew" placeholder="please input..."/>
         <ul>
-           <li v-for="item in items"
-               v-bind:class="{finished: item.isFinished}"
-               v-on:click="toggleFinish(item)">
+           <li v-for="item in items" v-bind:class="{finished: item.isFinished}">
+               <!--绑定checkbox 自己的checked属性-->
+               <input type="checkbox" v-bind:checked="item.isFinished" v-on:click="toggleFinish(item)"/>
                {{item.label}}
+               <button v-on:click="deleteItem(item)">delete</button>
            </li>
         </ul>
     </div>
@@ -41,6 +42,9 @@
                     'isFinished': false
                 }),
                 this.newItem = ""
+            },
+            deleteItem: function (item) {
+                this.items.splice(this.items.indexOf(item),1)
             }
         }
     }
@@ -51,6 +55,5 @@
     .finished{
         text-decoration: underline;
     }
-
 </style>
 
