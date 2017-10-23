@@ -15,10 +15,10 @@
         </section>
         <!-- footer -->
         <footer class="footer" v-show="todos.length">
-      <span class="todo-count">
-        <strong>{{ remaining }}</strong>
-        {{ remaining | pluralize('item') }} left
-      </span>
+            <span class="todo-count">
+                <strong>{{ remaining }}</strong>
+                {{ remaining | pluralize('item') }} left
+            </span>
             <ul class="filters">
                 <li v-for="(val, key) in filters">
                     <a :href="'#/' + key"
