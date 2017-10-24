@@ -4,7 +4,7 @@
         <p v-show="!products.length">
             <i>Please add some products to cart.</i>
         </p>
-        测试 v-show 的数据： {{products.length}} <br>
+        test v-show data： {{products.length}}  {{ !products.length }}<br>
         <ul>
             <li v-for="p in products">
                 {{ p.title }} - {{ p.price | currency }} x {{ p.quantity }}

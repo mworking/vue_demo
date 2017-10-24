@@ -3,10 +3,9 @@
         <li v-for="p in products">
             {{ p.title }} - {{ p.price | currency }}
             <br>
-            <button
-                    :disabled="!p.inventory"
-                    @click="addToCart(p)">
-                Add to cart
+            <button :disabled="!p.inventory" @click="addToCart(p)">
+                Add to cart  <br>
+                test :disabled info {{ p.inventory }} {{ !p.inventory }}
             </button>
         </li>
     </ul>
