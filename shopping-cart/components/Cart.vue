@@ -21,11 +21,13 @@
 
     export default {
         computed: {
+            // 映射getters
             ...mapGetters({
                 products: 'cartProducts',
                 checkoutStatus: 'checkoutStatus'
             }),
             total () {
+                //对数组中的所有元素调用指定的回调函数。该回调函数的返回值为累积结果，并且此返回值在下一次调用该回调函数时作为参数提供。
                 return this.products.reduce((total, p) => {
                     return total + p.price * p.quantity
                 }, 0)

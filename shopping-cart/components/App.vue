@@ -14,6 +14,7 @@
     import Cart from './Cart.vue'
 
     export default {
+        // 组件注册
         components: { ProductList, Cart }
     }
 </script>
