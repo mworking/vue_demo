@@ -52,7 +52,7 @@ const mutations = {
     },
 
     [types.CHECKOUT_FAILURE] (state, { savedCartItems }) {
-        // rollback to the cart saved before sending the request
+        // rollback to the cart saved before sending the request 在发送请求之前，回滚到保存的购物车
         state.added = savedCartItems
         state.checkoutStatus = 'failed'
     }

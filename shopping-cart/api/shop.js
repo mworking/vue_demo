@@ -14,7 +14,7 @@ export default {
 
     buyProducts (products, cb, errorCb) {
         setTimeout(() => {
-            // simulate random checkout failure.
+            // simulate(模拟) random checkout failure.  模拟随机失败
             (Math.random() > 0.5 || navigator.userAgent.indexOf('PhantomJS') > -1)
                 ? cb()
                 : errorCb()
