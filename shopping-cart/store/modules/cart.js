@@ -36,29 +36,36 @@ const actions = {
 
 // mutations
 const mutations = {
+    // 添加购物车
     [types.ADD_TO_CART] (state, { id }) {
         state.lastCheckout = null
+        // 判断购物车里面是否添加了该物品
         const record = state.added.find(p => p.id === id)
+        // 没有添加， 添加一个
         if (!record) {
             state.added.push({
                 id,
                 quantity: 1
             })
         } else {
+            //已经添加过了，则只增加该物品的数量
             record.quantity++
         }
     },
 
+    // 发起支付请求，清空购物车
     [types.CHECKOUT_REQUEST] (state) {
         // clear cart
         state.added = []
         state.checkoutStatus = null
     },
 
+    // 支付成功
     [types.CHECKOUT_SUCCESS] (state) {
         state.checkoutStatus = 'successful'
     },
 
+    // 清空购物车
     [types.CHECKOUT_FAILURE] (state, { savedCartItems }) {
         // rollback to the cart saved before sending the request 在发送请求之前，回滚到保存的购物车
         state.added = savedCartItems
