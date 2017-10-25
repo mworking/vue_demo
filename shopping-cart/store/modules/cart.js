@@ -16,7 +16,11 @@ const getters = {
     checkoutStatus: state => state.checkoutStatus
 }
 
-// actions 涉及到调用异步 API 和分发多重 mutation：
+/*
+* Action 类似于 mutation，不同在于：
+*   Action 提交的是 mutation，而不是直接变更状态。
+*   Action 可以包含任意异步操作。
+* **/
 const actions = {
     checkout ({ commit, state }, products) {
         // 把当前购物车的物品备份起来
