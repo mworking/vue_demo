@@ -8,16 +8,16 @@ const _products = [
 ]
 
 export default {
+    // 获取产品
     getProducts (cb) {
         setTimeout(() => cb(_products), 100)
     },
 
+    // 购买产品
     buyProducts (products, cb, errorCb) {
         setTimeout(() => {
             // simulate(模拟) random checkout failure.  模拟随机失败
-            (Math.random() > 0.5 || navigator.userAgent.indexOf('PhantomJS') > -1)
-                ? cb()
-                : errorCb()
+            (Math.random() > 0.5 || navigator.userAgent.indexOf('PhantomJS') > -1) ? cb() : errorCb()
         }, 100)
     }
 }
