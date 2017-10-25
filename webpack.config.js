@@ -8,7 +8,8 @@ module.exports = {
         // counter_hot: './counter-hot/app.js',
         // todo_mvc: './todomvc/app.js'
         // List:'./todomvc_jiandan/app.js'
-        shopping_cart: './shopping-cart/app.js'
+        // shopping_cart: './shopping-cart/app.js',
+            chat:'./chat/app.js'
     },
 
     output: {
