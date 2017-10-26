@@ -1,4 +1,7 @@
 
+vue_router これはvue router 例れい
+アドレス　address　https://router.vuejs.org/zh-cn/
+
 shopping-cart 购物车示例
 
 项目结构
