@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态路由匹配</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <p>
+    <router-link to="/user/foo">/user/foo</router-link>
+    <router-link to="/user/bar">/user/bar</router-link>
+  </p>
+  <router-view></router-view>
+</div>
+
+<script>
+
+  // 1. 创建组件
+  const User = {
+    template: `<div>User {{ $route.params.id }}</div>`
+  }
+
+  // 2. 创建路由
+  const router = new VueRouter({
+    routes: [
+      { path: '/user/:id', component: User }
+    ]
+  })
+
+  // 3. 注册，显示
+  const app = new Vue({ router }).$mount('#app')
+</script>
+
+
+</body>
+</html>
