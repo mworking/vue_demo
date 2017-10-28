@@ -9,8 +9,10 @@ module.exports = {
         // todo_mvc: './todomvc/app.js'
         // List:'./todomvc_jiandan/app.js'
         // shopping_cart: './shopping-cart/app.js',
-            chat:'./chat/app.js'
+        //     chat:'./chat/app.js'
+            contact: './component_contact/app.js'
     },
+
 
     output: {
         path: path.resolve(__dirname, './dist'),

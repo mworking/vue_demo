@@ -1,3 +1,7 @@
+component_contact :
+    父组件向子组件传值 通过 props
+
+
 
 vue_router これはvue router 例れい
 アドレス　address　https://router.vuejs.org/zh-cn/
