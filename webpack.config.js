@@ -10,7 +10,8 @@ module.exports = {
         // List:'./todomvc_jiandan/app.js'
         // shopping_cart: './shopping-cart/app.js',
         //     chat:'./chat/app.js'
-            contact: './component_contact/app.js'
+        //     contact: './component_contact/app.js'
+        contact_2: './component_contact_2/app.js'
     },
 
 
