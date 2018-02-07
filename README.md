@@ -6,8 +6,7 @@ component_contact_2 : 子组件向父组件传递消息 通过 this.$emit 用到
 
 ## vue router
 ```
-vue_router :
-    vue router 使用简单介绍 https://router.vuejs.org/zh-cn/
+vue_router : vue router 使用简单介绍 https://router.vuejs.org/zh-cn/
 ```
 
 ## vuex
