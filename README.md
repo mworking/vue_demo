@@ -1,3 +1,8 @@
+    component_contact :
+        父组件向子组件传值 通过 props
+    component_contact_2
+        子组件向父组件传递消息 通过 this.$emit 用到的知识点是 自定义事件
+
 
 vue_router これはvue router 例れい
 アドレス　address　https://router.vuejs.org/zh-cn/
