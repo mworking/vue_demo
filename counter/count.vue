@@ -12,6 +12,13 @@
     import { mapGetters, mapActions } from 'vuex';
 
     export default {
+        //1. computed 是vue 中的东西， 用于计算初始值属性
+        //2. mapGetters 是vuex 中的东西
+        //3. 通过如下方式，相当于把vue中原先computed里面写的，拿到vuex中去了
+        //4. vuex 其实就是一个vue的插件的作用，Vue.use(Vuex); 就代表，我使用你vuex这个插件了
+        //5. computed 就像vue提供的插座， mapGetters就像vuex提供的插头，把原先computed这儿的一堆东西，做了个封装
+        //6. 综上所述， vuex不是必须的，可用也可不用，没有他依然可以完成所有功能，我依然可以在computed中写一堆东西，
+        // ，依然可以把方法写到methods中，vuex的存在是为了简化vue的操作，精简一部分流程，更好管理，使用
         computed: mapGetters([
            'evenOrOdd'
         ]),
