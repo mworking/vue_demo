@@ -7,10 +7,12 @@ component_contact_2
 ```
 
 ## vue router
-   vue_router :
-        vue router 使用简单介绍 https://router.vuejs.org/zh-cn/
+```
+vue_router :
+    vue router 使用简单介绍 https://router.vuejs.org/zh-cn/
+```
 
-shopping-cart 购物车示例
+## shopping-cart 购物车示例
 
 项目结构
 
