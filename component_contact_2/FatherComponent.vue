@@ -6,6 +6,7 @@
             在SonComponent中通过this.$emit()触发child-tell-me-something这个方法，然后调用到父组件的listenToMyboy，
             并且携带参数传递
         -->
+        <!--子组件向父组件传值，相当于子组件中的child-tell-me-something方法，等同于父组件中的listenToMyboy方法，就是绑定称为一个方法-->
         <son-component v-on:child-tell-me-something='listenToMyboy'></son-component>
     </div>
 </template>
