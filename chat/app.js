@@ -5,6 +5,7 @@ import { getAllMessages } from './store/actions'
 
 Vue.config.debug = true
 
+//过滤器
 Vue.filter('time', timestamp => {
   return new Date(timestamp).toLocaleTimeString()
 })
