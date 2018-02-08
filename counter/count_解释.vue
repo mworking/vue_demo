@@ -33,7 +33,9 @@
         },
         // 把上面mapGetters换成不用vuex的写法，就是下面的， 所以说vuex可用可不用
         computed: {
-            evenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd'
+            evenOrOdd(state) {
+                return state.count % 2 === 0 ? 'even' : 'odd';
+            }
         },
         methods:{
             increment: ({ commit }) => commit('increment'),
