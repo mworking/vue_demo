@@ -12,6 +12,7 @@ vue_router : vue router 使用简单介绍 https://router.vuejs.org/zh-cn/
 ## vuex
 ```
 counter:  计数器应用
+counter-hot 计数器应用
 ```
 
 ## shopping-cart 购物车示例
