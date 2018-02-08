@@ -47,6 +47,10 @@ const actions = {
             },1000)
         })
     }
+    // //传入 一个commit 对象 执行commit('increment'); 操作      ？？？
+    // increment_temp({ commit }){
+    //     commit('increment');
+    // }
 }
 
 // getters are functions    getters 是一个方法
